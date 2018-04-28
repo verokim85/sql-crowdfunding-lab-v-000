@@ -17,7 +17,7 @@ end
 def selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_name
 "SELECT users.name, users.age, SUM(pledges.amount)
 FROM pledges
-JOIN projects ON projects.id = pledges.project_id
+JOIN users ON users.id = pledges.user_id
 GROUP BY projects.title
 ORDER BY projects.title, pledges.amount ASC"
 end
