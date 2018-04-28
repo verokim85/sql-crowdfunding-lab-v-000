@@ -9,14 +9,13 @@
 def selects_the_titles_of_all_projects_and_their_pledge_amounts_alphabetized_by_name
 "SELECT projects.title, SUM(pledges.amount)
 FROM pledges
-JOIN projects
-ON projects.id = pledges.project_id
+JOIN  projects projects.id = pledges.project_id
 ORDER BY projects.title, pledges.amount ASC"
 end
 
 def selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_name
 "SELECT users.name, users.age FROM users, SUM(pledge.amount) FROM pledges
-GROUP BY users.name 
+GROUP BY users.name
 
 
 "
